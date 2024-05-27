@@ -13,16 +13,21 @@ Based on [MetaMathQA](https://github.com/meta-math/MetaMath) and [MathInstruct](
 , we compile [mCoT-MATH](https://huggingface.co/datasets/laihuiyuan/mCoT-MATH), the first large-scale multilingual math
 CoT reasoning dataset containing around 6.3 million samples for 11 diverse languages.
 
-| Language  | SW      | BN      | TE      | TH      | JA      | ZH      | RU      | ES      | FR      | DE      | DE      | Overall |
-|:----------|:--------|:--------|:--------|:--------|:--------|:--------|:--------|:--------|:--------|:--------|:--------|--------|
-| mCoT-MATH | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | 580,000 | ~6.3M  |
+| Language  | SW    | BN    | TE    | TH    | JA    | ZH    | RU    | ES    | FR    | DE    | DE    |Overall |
+|:----------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|--------|
+| mCoT-MATH | ~580K | ~580K | ~580K | ~580K | ~580K | ~580K | ~580K | ~580K | ~580K | ~580K | ~580K | ~6.3M  |
 
 ## 🤗 Model: [mCoT](https://huggingface.co/laihuiyuan/mCoT)
 
 Based on mCoT-MATH, we finetune Mistral-7B for multilingual math reasoning, which achieves impressive consistency across
-languages, and in two datasets: [MGSM](https://arxiv.org/abs/2210.03057v1) and [MSVAMP](https://arxiv.org/abs/2310.20246).
+languages.
 
-### Results on MGSM
+### Multilingual Reasoning Consistency
+
+![](./img/consistency.png)
+
+
+### Results on [MGSM](https://arxiv.org/abs/2210.03057v1)
 | Language               | SW   | BN   | TE   | TH   | JA   | ZH   | RU   | ES   | FR   | DE   | EN   | 
 |:-----------------------|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | GPT-3 few-shot         | 11.2 | 6.4  | 0.4  | 0.8  | 26.0 | 40.0 | 28.4 | 40.4 | 37.6 | 36.0 | 53.6 |
@@ -36,7 +41,7 @@ languages, and in two datasets: [MGSM](https://arxiv.org/abs/2210.03057v1) and [
 | mCoT-7B                | 67.2 | 65.6 | 62.4 | 67.6 | 65.2 | 64.8 | 66.8 | 68.4 | 63.8 | 61.2 | 71.6 |
 
 
-### Results on MSVAMP
+### Results on [MSVAMP](https://arxiv.org/abs/2310.20246)
 | Language               | SW   | BN   | TH   | JA   | ZH   | RU   | ES   | FR   | DE   | EN   | AVG  | 
 |:-----------------------|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | GPT-3.5-En zero-shot   | 63.2 | 3.1  | 24.4 | 63.3 | 72.4 | 62.3 | 69.5 | 71.9 | 66.7 | 76.1 | 57.3 |
